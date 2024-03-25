@@ -4,7 +4,7 @@
   "description": "Web components for my personal projects",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"parcel index.html\" \"tailwindcss -i ./tailwindlib.css -o tw.css --watch\" \"twlit --input tw.css --output tw.js\""
+    "dev": "parcel index.html"
   },
   "author": "",
   "license": "ISC",
@@ -14,11 +14,8 @@
     "lit": "^3.1.2"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
     "lit-html": "^3.1.2",
     "parcel": "^2.12.0",
-    "tailwindcss": "^3.4.1",
-    "twlit": "^0.0.1-alpha.37",
     "typescript": "^5.4.3"
   }
 }
