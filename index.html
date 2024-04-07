@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>lol.ui</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <header>
-        <h1 style="border-bottom: 3px solid #84CC16;">lol.ui</h1>
+        <h1>lol.ui</h1>
     </header>
     <main>
+        <p>
+            lol.ui is a ui library for my personal projects. It is mostly css for existing html elements, but 
+            there are also some custom components. The custom components are built with lithtml, but should work 
+            with any framework.
+        </p>
         <h2>Colors</h2>
         <p>The colors for the current theme.</p>
         <div class="flex-grid">
@@ -77,7 +82,7 @@
                 <p>An app intended for internal audiences</p>
             </ui-card>
 
-            <ui-card>
+            <ui-card checked="true">
                 <h6 slot="header">Internal App</h6>
                 <p>An app intended for internal audiences</p>
             </ui-card>
@@ -123,7 +128,12 @@
 
             <fieldset>
                 <input name="check" type="checkbox" value="Checkbox" >
-                <label for="check">Checkbox:</label>
+                <label for="check">Check me</label>
+            </fieldset>
+
+            <fieldset>
+                <input name="radio" type="radio" value="radio" >
+                <label for="radio">Check me</label>
             </fieldset>
 
             <fieldset>
@@ -140,9 +150,53 @@
                 </select>
             </fieldset>
 
+            <fieldset>
+                <label for="textarea">Textarea:</label>
+                <textarea name="textarea" id="textarea"></textarea>
+            </fieldset>
+
             <input type="submit" value="ok">
         </form>
-
+        <h2>Expander</h2>
+        <details title="expander">
+            <summary>Expander</summary>
+            <p>Some text</p>
+        </details>
+        <h2>Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column A</th>
+                    <th>Column B</th>
+                    <th>Column C</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Some Product or something</td>
+                    <td>Some Category</td>
+                    <td>$1 234.50</td>
+                </tr>
+                
+                <tr>
+                    <td>Some Product or something</td>
+                    <td>Some Category</td>
+                    <td>$1 234.50</td>
+                </tr>
+                
+                <tr>
+                    <td>Some Product or something</td>
+                    <td>Some Category</td>
+                    <td>$1 234.50</td>
+                </tr>
+                
+                <tr>
+                    <td>Some Product or something</td>
+                    <td>Some Category</td>
+                    <td>$1 234.50</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <script src="components/ui-card.ts" type="module"></script>
 </body>

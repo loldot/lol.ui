@@ -3,6 +3,7 @@
     --space-md: 1em;
     --space-lg: 2em;
 
+    --bg-main: rgb(15, 23, 42);
     --bg-dark: hsl(204, 80%, 16%);
     --bg-slate-dark: hsl(217, 33%, 17%);
     --bg-slate-highlight: hsl(215, 19%, 35%);
@@ -40,12 +41,16 @@
 }
 
 body {
-    background-color: rgb(15, 23, 42);
+    background-color: var(--bg-main);
     color: var(--text);
     padding: var(--space-lg);
 
     font-size: var(--text-size-0);
     line-height: 1em;
+}
+
+header> :is(h1, h2, h3, h4, h5, h6) {
+    border-bottom: 3px solid var(--accent);
 }
 
 h2,
@@ -80,7 +85,8 @@ h2 {
 }
 
 h1 {
-    font-size: var(--text-size-6);;
+    font-size: var(--text-size-6);
+    ;
     margin: 0 0 .5em 0;
     line-height: 1em;
     font-weight: normal;
@@ -97,14 +103,15 @@ li {
 
 p,
 blockquote {
+    line-height: 1.5em;
     margin: 0 0 1.5em 0;
 }
 
 blockquote {
     display: block;
-    font-size: 25pt;
+    font-size: var(--text-size-3);
     padding: var(--space-sm);
-    border-left: hsl(215, 19%, 35%) solid .2em;
+    border-left: var(--bg-slate-dark) solid .2em;
 }
 
 hr {
@@ -117,7 +124,10 @@ hr {
     gap: 1em;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
     padding: var(--space-sm);
     margin: var(--space-sm) 0;
 
@@ -131,11 +141,15 @@ input, button, textarea, select {
     border-bottom: var(--bg-slate-highlight) solid 2px;
 }
 
-input:focus, button:focus, textarea:focus {
+input:focus,
+button:focus,
+textarea:focus {
     border-color: var(--accent);
 }
 
-input:invalid, button:invalid, textarea:invalid {
+input:invalid,
+button:invalid,
+textarea:invalid {
     border-color: var(--danger);
 }
 
@@ -145,7 +159,7 @@ input[type=reset],
 .button {
     background-color: var(--accent-dark);
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
-    
+
     border-bottom: none;
     border-radius: .5em;
 
@@ -162,17 +176,50 @@ input[type=reset]:hover,
     background-color: var(--accent);
 }
 
-input[type=checkbox] {
-    color: pink;
-    background: pink;
-    width: 1.5rem;
-    height: 1.5rem;
+input[type=checkbox],
+input[type=radio] {
+    width: 1rem;
+    height: 1rem;
+}
+
+label+ :is(input, select, textarea) {
+    display: block;
 }
 
 fieldset {
     border: none;
     outline: none;
-    display: flex;
-    flex-direction: column;
     padding: var(--space-sm) 0;
+}
+
+details {
+    border: 1px solid var(--bg-slate-highlight);
+    border-radius: .5em;
+    overflow: hidden;
+}
+
+summary {
+    padding: var(--space-sm);
+    font-size: var(--text-size-1);
+    background-color: var(--bg-dark);
+
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--bg-dark);
+    text-align: left;
+}
+
+tbody > tr {
+    border-bottom: 1px solid var(--bg-slate-highlight);
+}
+
+th,
+td {
+    padding: var(--space-sm)
 }
