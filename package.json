@@ -4,7 +4,8 @@
   "description": "Web components for my personal projects",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html"
+    "dev": "parcel index.html",
+    "build": "tsc && (cp index.html ./dist || copy index.html .\\dist)"
   },
   "author": "",
   "license": "ISC",
