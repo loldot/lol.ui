@@ -1,0 +1,178 @@
+:root {
+    --space-sm: .5em;
+    --space-md: 1em;
+    --space-lg: 2em;
+
+    --bg-dark: hsl(204, 80%, 16%);
+    --bg-slate-dark: hsl(217, 33%, 17%);
+    --bg-slate-highlight: hsl(215, 19%, 35%);
+
+    --text: #f0f0f0;
+
+    --accent: hsl(83.7, 80.5%, 60.5%);
+    --accent-light: hsl(83.7, 80.5%, 60.5%);
+    --accent-lightest: hsl(83.7, 80.5%, 80.1%);
+    --accent-dark: hsl(83.7, 80.5%, 40.5%);
+
+    accent-color: var(--accent);
+
+    --warning: hsla(52, 77%, 53%, 1);
+    --warning-light: hsla(52, 77%, 66%, 1);
+    --warning-lighter: hsla(52, 77%, 88%, 1);
+
+    --danger: hsl(353, 72%, 44%);
+    --danger-light: hsl(353, 72%, 60%);
+    --danger-lighter: hsl(353, 72%, 80%);
+
+    --text-size-0: 14pt;
+    --text-size-1: 17pt;
+    --text-size-2: 20pt;
+    --text-size-3: 25pt;
+    --text-size-4: 31pt;
+    --text-size-5: 37pt;
+    --text-size-6: 45pt;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(15, 23, 42);
+    color: var(--text);
+    padding: var(--space-lg);
+
+    font-size: var(--text-size-0);
+    line-height: 1em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: var(--space-md) 0 var(--space-sm) 0;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+h6 {
+    font-size: var(--text-size-1);
+}
+
+h5 {
+    font-size: var(--text-size-2);
+}
+
+h4 {
+    font-size: var(--text-size-3);
+}
+
+
+h3 {
+    font-size: var(--text-size-4);
+}
+
+h2 {
+    font-size: var(--text-size-5);
+}
+
+h1 {
+    font-size: var(--text-size-6);;
+    margin: 0 0 .5em 0;
+    line-height: 1em;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    padding: var(--space-sm) 0 0 var(--space-md);
+}
+
+li {
+    margin-bottom: var(--space-sm);
+}
+
+p,
+blockquote {
+    margin: 0 0 1.5em 0;
+}
+
+blockquote {
+    display: block;
+    font-size: 25pt;
+    padding: var(--space-sm);
+    border-left: hsl(215, 19%, 35%) solid .2em;
+}
+
+hr {
+    margin: var(--space-lg) 0;
+    color: var(--bg-slate-highlight);
+}
+
+.flex-grid {
+    display: flex;
+    gap: 1em;
+}
+
+input, button, textarea, select {
+    padding: var(--space-sm);
+    margin: var(--space-sm) 0;
+
+    background: var(--bg-slate-dark);
+    color: var(--text);
+
+    font-size: var(--text-size-0);
+
+    outline: none;
+    border: none;
+    border-bottom: var(--bg-slate-highlight) solid 2px;
+}
+
+input:focus, button:focus, textarea:focus {
+    border-color: var(--accent);
+}
+
+input:invalid, button:invalid, textarea:invalid {
+    border-color: var(--danger);
+}
+
+button,
+input[type=submit],
+input[type=reset],
+.button {
+    background-color: var(--accent-dark);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+    
+    border-bottom: none;
+    border-radius: .5em;
+
+    min-width: 4em;
+    cursor: pointer;
+
+    text-transform: capitalize;
+}
+
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+.button:hover {
+    background-color: var(--accent);
+}
+
+input[type=checkbox] {
+    color: pink;
+    background: pink;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+fieldset {
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm) 0;
+}

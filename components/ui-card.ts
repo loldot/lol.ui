@@ -1,7 +1,7 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from 'lit/decorators';
 
-import { OffWhite, SlateDark, SlateHighlight } from '../styles/colors';
+import { Text, SlateDark, SlateHighlight } from '../styles/colors';
 import { Reset } from '../styles/utils';
 
 
@@ -14,7 +14,7 @@ export class Card extends LitElement {
     }
 
     #container {
-        color: ${OffWhite};
+        color: ${Text};
         background-color: ${SlateDark};
 
         padding: 1em;
@@ -25,7 +25,7 @@ export class Card extends LitElement {
         align-items: center;
         gap: 1em;
 
-        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
     }
 
     #container:hover {
