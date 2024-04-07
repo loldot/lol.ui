@@ -1,8 +1,8 @@
 import { LitElement, css, html } from "lit";
-import { customElement, property } from 'lit/decorators';
 import {classMap} from 'lit-html/directives/class-map.js';
 
 import { Reset } from '../styles/utils';
+import { customElement, property } from "lit/decorators.js";
 
 
 @customElement('ui-card')

@@ -4,19 +4,19 @@
   "description": "Web components for my personal projects",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "tsc && cp index.html ./dist && cp main.css ./dist"
+    "dev": "vite",
+    "build": "tsc && vite build"
   },
   "author": "",
   "license": "ISC",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
   "dependencies": {
-    "lit": "^3.1.2"
+    "lit": "^3.1.2",
+    "lit-html": "^3.1.2"
   },
   "devDependencies": {
-    "lit-html": "^3.1.2",
-    "parcel": "^2.12.0",
+    "vite": "^5.2.7",
     "typescript": "^5.4.3"
   }
 }
