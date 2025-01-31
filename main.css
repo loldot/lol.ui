@@ -4,7 +4,7 @@
     --space-lg: 2em;
 
     --bg-main: rgb(15, 23, 42);
-    --bg-dark: hsl(204, 80%, 16%);
+    --bg-dark: #334155;
     --bg-slate-dark: hsl(217, 33%, 17%);
     --bg-slate-highlight: hsl(215, 19%, 35%);
 
@@ -197,14 +197,13 @@ fieldset {
 
 details {
     border: 1px solid var(--bg-slate-highlight);
-    border-radius: .5em;
     overflow: hidden;
 }
 
 summary {
     padding: var(--space-sm);
     font-size: var(--text-size-1);
-    background-color: var(--bg-dark);
+    background-color: var(--bg-slate-dark);
 
     cursor: pointer;
 }
@@ -214,15 +213,30 @@ table {
 }
 
 thead {
-    background-color: var(--bg-dark);
+    color: var(--accent);
     text-align: left;
 }
 
+thead > tr {
+    border-bottom: 2px solid var(--accent);
+}
+
 tbody > tr {
-    border-bottom: 1px solid var(--bg-slate-highlight);
+    border-bottom: 2px solid var(--bg-dark);
+}
+
+tbody > tr:nth-child(2n+1) {
+    background-color: var(--bg-slate-dark);
 }
 
 th,
 td {
     padding: var(--space-sm)
+}
+
+
+@media only screen and (max-width: 768px) {
+    input, select, textarea {
+        width: 100%; 
+    }
 }

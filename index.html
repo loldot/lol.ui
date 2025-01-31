@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lol.ui</title>
     <script src="components/ui-card.ts" type="module"></script>
+    <script src="components/ui-tabs.ts" type="module"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -198,6 +199,29 @@
                 </tr>
             </tbody>
         </table>
+
+        <h2>Tabs</h2>
+        <ui-tabs>
+            <ui-tab-panel id="test-1" title="Tab 1">
+                <section slot="content">
+                    <h3>Section 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra
+                        ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam
+                            luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit
+                        amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
+                </section>
+            </ui-tab-panel>
+            <ui-tab-panel id="test-2" title="Tab 2">
+                <section slot="content">
+                    <h3>Section 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra
+                        ultricies,
+                        ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim in
+                        interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non
+                        odio bibendum magna bibendum accumsan.</p>
+                </section>
+            </ui-tab-panel>
+        </ui-tabs>
     </main>
 </body>
 
