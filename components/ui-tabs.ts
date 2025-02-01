@@ -53,16 +53,16 @@ export class Tabs extends LitElement {
             display: inline-block;
             background-color: var(--bg-slate-dark);
             color: var(--text) ;
-            padding: 8px;
+            padding: .5rem 1rem ;
             border: var(--border-sz) solid var(--bg-dark);
             position: relative;
             top: var(--border-sz);
         }
         .tab-button a {
             display: inline-block;
-            padding: calc(1em - 8px);
             color: var(--text) ;
             text-decoration:none;
+            padding: .5rem;
             border-bottom: 2px solid transparent;
         }
         .tab-button[aria-selected] {
@@ -93,7 +93,7 @@ export class Tabs extends LitElement {
         return html`
             <div class="tabbed">
                 <ul role="tablist">
-                    ${tabs.values().map((tab, index) => html`
+                    ${Array.from(tabs).map((tab, index) => html`
                         <li class="tab-button" 
                             ?aria-selected=${index === this.selectedIndex}
                             @click="${() => this.selectTab(index)}">
