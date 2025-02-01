@@ -35,7 +35,7 @@
 }
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Verdana, Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
     border-radius: 0;
@@ -231,9 +231,31 @@ tbody > tr:nth-child(2n+1) {
 
 th,
 td {
-    padding: var(--space-sm)
+    padding: var(--space-sm) var(--space-md); 
+    font-variant-numeric: tabular-nums;
 }
 
+.block {
+    display: block;
+}
+
+.sm {
+   padding: var(--space-sm);
+   min-width: 180px;
+   min-height: 40px; 
+}
+
+.md {
+    padding: var(--space-md);
+    min-width: 360px;
+    min-height: 120px; 
+ }
+
+.lg {
+    padding: var(--space-lg);
+    min-width: 1080;
+    min-height: 360;
+}
 
 @media only screen and (max-width: 768px) {
     input, select, textarea {
