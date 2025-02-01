@@ -29,10 +29,6 @@ export class TabPanel extends LitElement {
     protected override render() {
         return html`
             <slot name="content"></slot>
-            <pre>
-                id: ${this.id}
-                title: ${this.title}
-            </pre>
         `
     }
 }

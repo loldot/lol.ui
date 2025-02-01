@@ -158,25 +158,48 @@ textarea:invalid {
 
 button,
 input[type=submit],
+input[type=button],
 input[type=reset],
 .button {
     background-color: var(--accent-dark);
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
 
-    border-bottom: none;
-    border-radius: .5em;
+    border: thin solid var(--accent-light);
+    border-radius: 4px;
 
     min-width: 4em;
     cursor: pointer;
 
     text-transform: capitalize;
-}
 
-button:hover,
-input[type=submit]:hover,
-input[type=reset]:hover,
-.button:hover {
-    background-color: var(--accent);
+
+    &.subtle {
+        background-color: transparent;
+    }
+
+    &.subtle:hover {
+        color: var(--accent);
+    }
+
+    &.warning {
+        background-color: var(--warning);
+        border-color: var(--warning-light);
+        color: var(--bg-main);
+    }
+
+    &.danger {
+        background-color: var(--danger);
+        border-color: var(--danger-light);
+    }
+
+    &:hover {
+        filter: brightness(135%);
+    }
+
+    &:disabled {
+        filter: brightness(50%);
+        cursor: not-allowed;
+    }
 }
 
 input[type=checkbox],

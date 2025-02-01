@@ -129,12 +129,12 @@
             </fieldset>
 
             <fieldset>
-                <input name="check" type="checkbox" value="Checkbox">
+                <input id="check" name="check" type="checkbox" value="Checkbox">
                 <label for="check">Check me</label>
             </fieldset>
 
             <fieldset>
-                <input name="radio" type="radio" value="radio">
+                <input id="radio" name="radio" type="radio" value="radio">
                 <label for="radio">Check me</label>
             </fieldset>
 
@@ -158,6 +158,13 @@
             </fieldset>
 
             <input type="submit" value="ok">
+            <input type="button" value="disabled" disabled>
+            <input type="button" class="subtle" value="subtle" >
+            <input type="button" class="subtle" value="disabled" disabled>
+            <button class="warning">Warning</button>
+            <button class="warning" disabled>Warning</button>
+            <button class="danger">Warning</button>
+            <button class="danger" disabled>Warning</button>
         </form>
         <h2>Expander</h2>
         <details title="expander">
