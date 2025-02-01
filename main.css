@@ -261,4 +261,19 @@ td {
     input, select, textarea {
         width: 100%; 
     }
+
+    .sm {
+        min-width: unset;
+        min-height: unset; 
+     }
+     
+     .md {
+         min-width: unset;
+         min-height: unset; 
+      }
+     
+     .lg {
+         min-width: unset;
+         min-height: unset;
+     }
 }
