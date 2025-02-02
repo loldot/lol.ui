@@ -1,5 +1,5 @@
 {
-  "name": "lol.ui",
+  "name": "@loldot/lol.ui",
   "version": "1.0.0",
   "description": "Web components for my personal projects",
   "main": "index.js",
