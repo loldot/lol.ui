@@ -289,6 +289,44 @@ td {
     min-height: 360;
 }
 
+.listbox {
+    list-style: none;
+    background-color: var(--bg-slate-dark);
+    border: 2px solid var(--bg-dark);
+    padding: 0;
+    width: fit-content;
+
+    & li:not(:last-child) {
+        border-bottom: 2px solid var(--bg-dark);
+    }
+
+    & li {
+        margin: 0;
+        position: relative;
+        padding-right: 2em;
+    }
+
+    & li:hover {
+        background-color: var(--bg-slate-highlight);
+    }
+
+    & li a {
+        display: inline-block;
+        padding: var(--space-sm);
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    & li a::after {
+        position: absolute;
+        right: 8px;
+        top: 4px;
+        color: var(--accent);
+        font-size: 2em;
+        content: '\203A'
+    }
+}
+
 @media only screen and (max-width: 768px) {
     input, select, textarea, button, .button {
         width: 100%; 
