@@ -120,6 +120,15 @@ hr {
     color: var(--bg-slate-highlight);
 }
 
+pre, code, samp { 
+    font-family: Consolas, 'Courier New', Courier, monospace;
+}
+pre {   
+   
+    white-space: pre-wrap;
+    tab-size: 4;
+}
+
 .flex-grid {
     display: flex;
     gap: 1em;

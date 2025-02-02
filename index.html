@@ -8,6 +8,11 @@
     <script src="components/ui-card.ts" type="module"></script>
     <script src="components/ui-tabs.ts" type="module"></script>
     <link rel="stylesheet" href="main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -159,7 +164,7 @@
 
             <input type="submit" value="ok">
             <input type="button" value="disabled" disabled>
-            <input type="button" class="subtle" value="subtle" >
+            <input type="button" class="subtle" value="subtle">
             <input type="button" class="subtle" value="disabled" disabled>
             <button class="warning">Warning</button>
             <button class="warning" disabled>Warning</button>
@@ -231,6 +236,29 @@
                 </section>
             </ui-tab-panel>
         </ui-tabs>
+
+        <h2>Notification</h2>
+
+        <pre>
+            <code class="language-javascript">
+import { NotificationBuilder } from './components/ui-notification.ts';
+const n = new NotificationBuilder("Hello from notifications")
+    .withBody("What's up")
+    .withIcon("error");
+
+document.getElementById('noti').onclick = () => n.send();
+            </code>
+        </pre>
+
+        <button id="noti">Send</button>
+        <script type="module">
+            import { NotificationBuilder } from './components/ui-notification.ts';
+            const n = new NotificationBuilder("Hello from notifications")
+                .withBody("What's up")
+                .withIcon("error");
+
+            document.getElementById('noti').onclick = () => n.send();
+        </script>
     </main>
 </body>
 
