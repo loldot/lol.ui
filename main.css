@@ -290,7 +290,7 @@ td {
 }
 
 @media only screen and (max-width: 768px) {
-    input, select, textarea {
+    input, select, textarea, button, .button {
         width: 100%; 
     }
 
