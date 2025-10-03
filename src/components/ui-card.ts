@@ -1,7 +1,7 @@
 import { LitElement, css, html } from "lit";
 import {classMap} from 'lit-html/directives/class-map.js';
 
-import { Reset } from '../styles/utils';
+import { Reset } from '../styles/utils.js';
 import { customElement, property } from "lit/decorators.js";
 
 

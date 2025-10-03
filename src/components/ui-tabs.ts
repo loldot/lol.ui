@@ -1,6 +1,6 @@
 import { LitElement, css, html } from "lit";
 
-import { Reset } from '../styles/utils';
+import { Reset } from '../styles/utils.js';
 import { customElement, property, queryAll, queryAssignedElements } from "lit/decorators.js";
 
 @customElement('ui-tab-panel')
