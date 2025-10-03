@@ -2,16 +2,16 @@
   "name": "@loldot/lol.ui",
   "version": "1.0.0",
   "description": "Web components for my personal projects",
-  "main": "index.js",
+  "main": "dist/lol-ui.cjs.js",
   "scripts": {
     "dev": "vite",
-    "build": "npx --package=typescript tsc && vite build",
-    "build:types": "npx --package=typescript tsc --emitDeclarationOnly",
+    "build": "vite build",
+    "build:types": "vite build --mode declaration",
     "preview": "vite preview"
   },
   "author": "",
   "license": "ISC",
-  "module": "dist/module.js",
+  "module": "dist/lol-ui.es.js",
   "types": "dist/types.d.ts",
   "dependencies": {
     "lit": "^3.1.2",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "typescript": "^5.4.3",
-    "vite": "^6.0.11"
+    "vite": "^6.0.11",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
