@@ -35,18 +35,26 @@ jobs:
       - name: Run tests (if any)
         run: npm test --if-present
         
-      - name: Build library
-        run: npm run build
+      - name: Build library (production mode)
+        run: |
+          echo "Building library in production mode..."
+          npm run build
         
       - name: Verify build output
         run: |
           echo "Checking dist directory..."
           ls -la dist/
-          echo "Checking if all required files exist..."
+          echo "Checking file sizes and minification..."
+          du -h dist/*.js
+          echo "Verifying all required files exist..."
           test -f dist/lol-ui.es.js || (echo "Missing ES build" && exit 1)
           test -f dist/lol-ui.cjs.js || (echo "Missing CJS build" && exit 1)
           test -f dist/lol-ui.umd.js || (echo "Missing UMD build" && exit 1)
           test -f dist/index.d.ts || (echo "Missing TypeScript declarations" && exit 1)
+          test -f dist/types.d.ts || (echo "Missing types entry point" && exit 1)
+          echo "Verifying minified builds..."
+          file dist/lol-ui.es.js | grep -q "ASCII text" || (echo "ES build not properly minified" && exit 1)
+          echo "All build verification checks passed!"
           
       - name: Update version (if specified)
         if: github.event.inputs.version != ''

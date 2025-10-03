@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import dts from 'vite-plugin-dts'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     dts({
       insertTypesEntry: true,
@@ -27,9 +27,12 @@ export default defineConfig({
       }
     },
     sourcemap: true,
-    minify: 'esbuild'
+    minify: 'esbuild',
+    target: 'es2020',
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1000
   },
   esbuild: {
     target: 'es2020'
   }
-})
+}))

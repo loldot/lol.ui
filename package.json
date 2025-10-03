@@ -6,7 +6,8 @@
   "main": "dist/lol-ui.cjs.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode production",
+    "build:dev": "vite build",
     "build:types": "vite build --mode declaration",
     "preview": "vite preview"
   },
