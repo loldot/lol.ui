@@ -1,6 +1,6 @@
 {
   "name": "@loldot/lol.ui",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Web components library built with Lit for React, Vue, and vanilla JavaScript projects",
   "keywords": ["web-components", "lit", "ui", "react", "vue", "typescript"],
   "main": "dist/lol-ui.cjs.js",
