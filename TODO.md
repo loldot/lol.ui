@@ -36,13 +36,13 @@
 
 ## 4. TypeScript Configuration
 
-- [ ] Update `tsconfig.json` for library build
-  - [ ] Change `target` to `"ES2020"`
-  - [ ] Change `moduleResolution` to `"bundler"`
-  - [ ] Enable `declaration` and `declarationMap`
-  - [ ] Set `rootDir` to `"./src"`
-  - [ ] Update `include` to `["src/**/*"]`
-  - [ ] Add `dist` to `exclude` array
+- [x] Update `tsconfig.json` for library build
+  - [x] Change `target` to `"ES2020"`
+  - [x] Change `moduleResolution` to `"bundler"`
+  - [x] Enable `declaration` and `declarationMap`
+  - [x] Set `rootDir` to `"./src"`
+  - [x] Update `include` to `["src/**/*"]`
+  - [x] Add `dist` to `exclude` array
 
 ## 5. Main Entry Point
 
