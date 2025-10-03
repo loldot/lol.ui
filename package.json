@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "npx --package=typescript tsc && vite build",
+    "build:types": "npx --package=typescript tsc --emitDeclarationOnly",
+    "preview": "vite preview"
   },
   "author": "",
   "license": "ISC",

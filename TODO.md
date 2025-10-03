@@ -2,16 +2,16 @@
 
 ## 1. Build System Setup
 
-- [ ] Create `vite.config.ts` with library build configuration
-  - [ ] Configure entry point as `src/index.ts`
-  - [ ] Set up multiple output formats (ES, UMD, CJS)
-  - [ ] Configure external dependencies (lit, lit-html)
-  - [ ] Set up global variables for UMD build
+- [x] Create `vite.config.ts` with library build configuration
+  - [x] Configure entry point as `src/index.ts`
+  - [x] Set up multiple output formats (ES, UMD, CJS)
+  - [x] Configure external dependencies (lit, lit-html)
+  - [x] Set up global variables for UMD build
 
-- [ ] Update build scripts in `package.json`
-  - [ ] Add `build:types` script for TypeScript declarations
-  - [ ] Update existing `build` script to include type generation
-  - [ ] Add `preview` script for testing built library
+- [x] Update build scripts in `package.json`
+  - [x] Add `build:types` script for TypeScript declarations
+  - [x] Update existing `build` script to include type generation
+  - [x] Add `preview` script for testing built library
 
 ## 2. Package Configuration
 
