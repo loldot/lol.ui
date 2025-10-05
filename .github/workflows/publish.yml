@@ -47,13 +47,16 @@ jobs:
           echo "Checking file sizes and minification..."
           du -h dist/*.js
           echo "Verifying all required files exist..."
-          test -f dist/lol-ui.es.js || (echo "Missing ES build" && exit 1)
-          test -f dist/lol-ui.cjs.js || (echo "Missing CJS build" && exit 1)
-          test -f dist/lol-ui.umd.js || (echo "Missing UMD build" && exit 1)
+          test -f dist/index.js || (echo "Missing ES build" && exit 1)
+          test -f dist/index.cjs || (echo "Missing CJS build" && exit 1)
+          test -f dist/index.umd.js || (echo "Missing UMD build" && exit 1)
+          test -f dist/web-components.js || (echo "Missing web-components ES build" && exit 1)
+          test -f dist/web-components.umd.js || (echo "Missing web-components UMD build" && exit 1)
           test -f dist/index.d.ts || (echo "Missing TypeScript declarations" && exit 1)
-          test -f dist/types.d.ts || (echo "Missing types entry point" && exit 1)
-          echo "Verifying minified builds..."
-          file dist/lol-ui.es.js | grep -q "ASCII text" || (echo "ES build not properly minified" && exit 1)
+          test -f dist/main.css || (echo "Missing CSS file" && exit 1)
+          echo "Verifying component builds..."
+          test -f dist/components/ui-card.js || (echo "Missing ui-card component" && exit 1)
+          test -f dist/components/ui-tabs.js || (echo "Missing ui-tabs component" && exit 1)
           echo "All build verification checks passed!"
           
       - name: Update version (if specified)

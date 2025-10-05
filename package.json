@@ -1,15 +1,51 @@
 {
   "name": "@loldot/lol.ui",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Web components library built with Lit for React, Vue, and vanilla JavaScript projects",
-  "keywords": ["web-components", "lit", "ui", "react", "vue", "typescript"],
-  "main": "dist/lol-ui.cjs.js",
+  "keywords": [
+    "web-components",
+    "lit",
+    "ui",
+    "react",
+    "vue",
+    "typescript"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./web-components": {
+      "types": "./dist/web-components.d.ts",
+      "import": "./dist/web-components.js",
+      "require": "./dist/web-components.cjs"
+    },
+    "./components/*": {
+      "types": "./dist/components/*.d.ts",
+      "import": "./dist/components/*.js",
+      "require": "./dist/components/*.cjs"
+    },
+    "./styles/*": {
+      "types": "./dist/styles/*.d.ts",
+      "import": "./dist/styles/*.js",
+      "require": "./dist/styles/*.cjs"
+    },
+    "./main.css": "./main.css"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build --mode production",
-    "build:dev": "vite build",
-    "build:types": "vite build --mode declaration",
-    "preview": "vite preview"
+    "build": "npm run build:lib && npm run build:web-components && npm run build:components && npm run build:assets",
+    "build:lib": "vite build --mode library",
+    "build:web-components": "vite build --config vite.web-components.config.ts",
+    "build:components": "vite build --mode components",
+    "build:assets": "copy main.css dist\\main.css",
+    "build:dev": "vite build --mode development",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -21,18 +57,19 @@
   "bugs": {
     "url": "https://github.com/loldot/lol.ui/issues"
   },
-  "module": "dist/lol-ui.es.js",
-  "types": "dist/types.d.ts",
   "files": [
     "dist",
+    "main.css",
     "README.md",
     "LICENSE"
   ],
+  "sideEffects": false,
   "dependencies": {
     "lit": "^3.1.2",
     "lit-html": "^3.1.2"
   },
   "devDependencies": {
+    "@types/node": "^24.6.2",
     "typescript": "^5.4.3",
     "vite": "^6.0.11",
     "vite-plugin-dts": "^4.5.4"

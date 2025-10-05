@@ -1,14 +1,15 @@
-// Import components to ensure web component registration
+// Web Components registration entry point
+// This file ensures all components are registered when imported
+
+// Import components to trigger custom element registration
 import './components/ui-card.js';
 import './components/ui-tabs.js';
 import './components/ui-notification.js';
 
-// Export all components
+// Export components and utilities for programmatic use
 export { Card } from './components/ui-card.js';
 export { Tabs, TabPanel } from './components/ui-tabs.js';
 export { NotificationBuilder } from './components/ui-notification.js';
-
-// Export utilities
 export { Reset } from './styles/utils.js';
 
 // Re-export lit for convenience
