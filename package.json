@@ -38,11 +38,10 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:lib && npm run build:web-components && npm run build:components && npm run build:assets",
+    "build": "npm run build:lib && npm run build:web-components && npm run build:components",
     "build:lib": "vite build --mode library",
     "build:web-components": "vite build --config vite.web-components.config.ts",
     "build:components": "vite build --mode components",
-    "build:assets": "copy main.css dist\\main.css",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "prepublishOnly": "npm run build"

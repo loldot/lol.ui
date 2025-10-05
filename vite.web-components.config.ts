@@ -1,6 +1,25 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { copyFileSync } from 'fs'
 import dts from 'vite-plugin-dts'
+
+// Plugin to copy main.css to dist
+function copyCSSPlugin() {
+  return {
+    name: 'copy-main-css',
+    closeBundle() {
+      try {
+        copyFileSync(
+          resolve(process.cwd(), 'main.css'),
+          resolve(process.cwd(), 'dist/main.css')
+        )
+        console.log('✓ Copied main.css to dist/')
+      } catch (err) {
+        console.error('Failed to copy main.css:', err)
+      }
+    }
+  }
+}
 
 export default defineConfig({
   plugins: [
@@ -10,7 +29,8 @@ export default defineConfig({
       exclude: ['**/*.test.ts', '**/*.spec.ts'],
       outDir: 'dist',
       rollupTypes: true
-    })
+    }),
+    copyCSSPlugin()
   ],
   build: {
     emptyOutDir: false,
