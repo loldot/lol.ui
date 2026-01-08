@@ -9,245 +9,266 @@
     <script src="components/ui-tabs.ts" type="module"></script>
     <link rel="stylesheet" href="main.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
 </head>
 
 <body>
-    <header>
-        <h1>lol.ui</h1>
-    </header>
-    <main>
-        <p>
-            lol.ui is a ui library for my personal projects. It is mostly css for existing html elements, but
-            there are also some custom components. The custom components are built with lithtml, but should work
-            with any framework.
-        </p>
-        <h2>Colors</h2>
-        <p>The colors for the current theme.</p>
-        <div class="flex-grid">
-
-            <div>
-                <div style="background-color: hsl(204, 80%, 16%); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsl(217, 33%, 17%); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsl(215, 19%, 35%); height: 40px; width: 40px;"></div>
-            </div>
-
-            <div>
-                <div style="background-color: hsl(83.7, 80.5%, 44.3%); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsl(83.7, 80.5%, 60.5%); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsl(83.7, 80.5%, 80.1%); height: 40px; width: 40px;"></div>
-            </div>
-
-            <div>
-                <div style="background-color: hsla(52, 77%, 53%, 1); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsla(52, 77%, 66%, 1); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsla(52, 77%, 88%, 1); height: 40px; width: 40px;"></div>
-            </div>
-
-            <div>
-                <div style="background-color: hsl(353, 72%, 44%); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsl(353, 72%, 60%); height: 40px; width: 40px;"></div>
-                <div style="background-color: hsl(353, 72%, 80%); height: 40px; width: 40px;"></div>
-            </div>
-        </div>
-
-        <h2>Typography</h2>
-        <div>
+    <layout>
+        <header>
+            <h1 class="xl">lol.ui</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#card">Card</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#expander">Expander</a></li>
+                <li><a href="#table">Table</a></li>
+                <li><a href="#tabs">Tabs</a></li>
+                <li><a href="#listbox">Listbox</a></li>
+                <li><a href="#notification">Notification</a></li>
+            </ul>
+        </nav>
+        <main>
             <p>
-                This is a paragraph. <em>With some emphasized text,</em> and some more text
-                <a href="https://google.com">and a link!</a>
+                lol.ui is a ui library for my personal projects. It is mostly css for existing html elements, but
+                there are also some custom components. The custom components are built with lithtml, but should work
+                with any framework.
             </p>
-            <blockquote>
-                This is a block quote.
-            </blockquote>
-            <ol>
-                <li>First item</li>
-                <li>Second item
-                    <ol>
-                        <li>Sub item #1</li>
-                        <li>Sub item #2</li>
-                    </ol>
-                </li>
-                <li>Third item</li>
-            </ol>
-        </div>
+            <h2 id="colors">Colors</h2>
+            <p>The colors for the current theme.</p>
+            <div class="flex-grid">
 
-        <hr>
+                <div>
+                    <div style="background-color: hsl(204, 80%, 16%); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsl(217, 33%, 17%); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsl(215, 19%, 35%); height: 40px; width: 40px;"></div>
+                </div>
 
-        <h2>Card</h2>
-        <div class="flex-grid">
-            <ui-card>
-                <svg style="width:32px; height:32px;" aria-hidden="true" slot="icon" xmlns="http://www.w3.org/2000/svg"
-                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z" />
-                </svg>
-                <h6 slot="header">Internal App</h6>
-                <p>An app intended for internal audiences</p>
-            </ui-card>
+                <div>
+                    <div style="background-color: hsl(83.7, 80.5%, 44.3%); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsl(83.7, 80.5%, 60.5%); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsl(83.7, 80.5%, 80.1%); height: 40px; width: 40px;"></div>
+                </div>
 
-            <ui-card checked="true">
-                <h6 slot="header">Internal App</h6>
-                <p>An app intended for internal audiences</p>
-            </ui-card>
+                <div>
+                    <div style="background-color: hsla(52, 77%, 53%, 1); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsla(52, 77%, 66%, 1); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsla(52, 77%, 88%, 1); height: 40px; width: 40px;"></div>
+                </div>
 
-        </div>
-
-        <h2>Forms</h2>
-        <form>
-            <fieldset>
-                <label for="textbox">Textbox:</label>
-                <input name="textbox" type="text" placeholder="text">
-            </fieldset>
-
-            <fieldset>
-                <label for="telephone">Telephone:</label>
-                <input name="telephone" type="tel" placeholder="tel">
-            </fieldset>
-
-            <fieldset>
-                <label for="email">Email:</label>
-                <input name="email" type="email" placeholder="email">
-            </fieldset>
-
-            <fieldset>
-                <label for="number">Number:</label>
-                <input name="number" type="number">
-            </fieldset>
-
-            <fieldset>
-                <label for="date">Date:</label>
-                <input name="date" type="date">
-            </fieldset>
-
-            <fieldset>
-                <label for="datetime">Datetime:</label>
-                <input name="datetime" type="datetime">
-            </fieldset>
-
-            <fieldset>
-                <label for="range">Range:</label>
-                <input name="range" type="range">
-            </fieldset>
-
-            <fieldset>
-                <input id="check" name="check" type="checkbox" value="Checkbox">
-                <label for="check">Check me</label>
-            </fieldset>
-
-            <fieldset>
-                <input id="radio" name="radio" type="radio" value="radio">
-                <label for="radio">Check me</label>
-            </fieldset>
-
-            <fieldset>
-                <label for="select">Select:</label>
-                <select name="select" id="select">
-                    <option value="a">An option</option>
-                    <option value="b">Another option</option>
-                    <option value="c">And one more option</option>
-                    <optgroup>
-                        <option value="nested">Nested A</option>
-                        <option value="nested">Nested B</option>
-                    </optgroup>
-
-                </select>
-            </fieldset>
-
-            <fieldset>
-                <label for="textarea">Textarea:</label>
-                <textarea name="textarea" id="textarea"></textarea>
-            </fieldset>
-
-            <input type="submit" value="ok">
-            <input type="button" value="disabled" disabled>
-            <input type="button" class="subtle" value="subtle">
-            <input type="button" class="subtle" value="disabled" disabled>
-            <button class="warning">Warning</button>
-            <button class="warning" disabled>Warning</button>
-            <button class="danger">Warning</button>
-            <button class="danger" disabled>Warning</button>
-        </form>
-        <h2>Expander</h2>
-        <details title="expander">
-            <summary>Expander</summary>
-            <div class="block md">
-                <p>Some text</p>
+                <div>
+                    <div style="background-color: hsl(353, 72%, 44%); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsl(353, 72%, 60%); height: 40px; width: 40px;"></div>
+                    <div style="background-color: hsl(353, 72%, 80%); height: 40px; width: 40px;"></div>
+                </div>
             </div>
-        </details>
-        <h2>Table</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Column A</th>
-                    <th>Column B</th>
-                    <th>Column C</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Some Product or something</td>
-                    <td>Some Category</td>
-                    <td>$1 234.50</td>
-                </tr>
 
-                <tr>
-                    <td>Some Product or something</td>
-                    <td>Some Category</td>
-                    <td>$1 234.50</td>
-                </tr>
+            <h2 id="typography">Typography</h2>
+            <div>
+                <p>
+                    This is a paragraph. <em>With some emphasized text,</em> and some more text
+                    <a href="https://google.com">and a link!</a>
+                </p>
+                <blockquote>
+                    This is a block quote.
+                </blockquote>
+                <ol>
+                    <li>First item</li>
+                    <li>Second item
+                        <ol>
+                            <li>Sub item #1</li>
+                            <li>Sub item #2</li>
+                        </ol>
+                    </li>
+                    <li>Third item</li>
+                </ol>
+            </div>
 
-                <tr>
-                    <td>Some Product or something</td>
-                    <td>Some Category</td>
-                    <td>$1 111.11</td>
-                </tr>
+            <hr>
 
-                <tr>
-                    <td>Some Product or something</td>
-                    <td>Some Category</td>
-                    <td>$8 888.88</td>
-                </tr>
-            </tbody>
-        </table>
+            <h2 id="card">Card</h2>
+            <div class="flex-grid">
+                <ui-card>
+                    <svg style="width:32px; height:32px;" aria-hidden="true" slot="icon"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z" />
+                    </svg>
+                    <h6 slot="header">Internal App</h6>
+                    <p>An app intended for internal audiences</p>
+                </ui-card>
 
-        <h2>Tabs</h2>
-        <ui-tabs>
-            <ui-tab-panel id="test-1" title="Tab 1">
-                <section slot="content" class="block md">
-                    <h3>Section 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra
-                        ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam
-                            luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit
-                        amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
-                </section>
-            </ui-tab-panel>
-            <ui-tab-panel id="test-2" title="Tab 2">
-                <section slot="content" class="block md">
-                    <h3>Section 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra
-                        ultricies,
-                        ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim in
-                        interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non
-                        odio bibendum magna bibendum accumsan.</p>
-                </section>
-            </ui-tab-panel>
-        </ui-tabs>
+                <ui-card checked="true">
+                    <h6 slot="header">Internal App</h6>
+                    <p>An app intended for internal audiences</p>
+                </ui-card>
 
-        <h2>Listbox</h2>
-        <ul class="listbox">
-            <li><a href="#">Item #1</a></li>
-            <li><a href="#">Item #2</a></li>
-            <li><a href="#">Item #3</a></li>
-            <li><a href="#">Item #4</a></li>
-        </ul>
+            </div>
 
-        <h2>Notification</h2>
+            <h2 id="forms">Forms</h2>
+            <form>
+                <fieldset>
+                    <label for="textbox">Textbox:</label>
+                    <input name="textbox" type="text" placeholder="text">
+                </fieldset>
 
-        <pre>
+                <fieldset>
+                    <label for="telephone">Telephone:</label>
+                    <input name="telephone" type="tel" placeholder="tel">
+                </fieldset>
+
+                <fieldset>
+                    <label for="email">Email:</label>
+                    <input name="email" type="email" placeholder="email">
+                </fieldset>
+
+                <fieldset>
+                    <label for="number">Number:</label>
+                    <input name="number" type="number">
+                </fieldset>
+
+                <fieldset>
+                    <label for="date">Date:</label>
+                    <input name="date" type="date">
+                </fieldset>
+
+                <fieldset>
+                    <label for="datetime">Datetime:</label>
+                    <input name="datetime" type="datetime">
+                </fieldset>
+
+                <fieldset>
+                    <label for="range">Range:</label>
+                    <input name="range" type="range">
+                </fieldset>
+
+                <fieldset>
+                    <input id="check" name="check" type="checkbox" value="Checkbox">
+                    <label for="check">Check me</label>
+                </fieldset>
+
+                <fieldset>
+                    <input id="radio" name="radio" type="radio" value="radio">
+                    <label for="radio">Check me</label>
+                </fieldset>
+
+                <fieldset>
+                    <label for="select">Select:</label>
+                    <select name="select" id="select">
+                        <option value="a">An option</option>
+                        <option value="b">Another option</option>
+                        <option value="c">And one more option</option>
+                        <optgroup>
+                            <option value="nested">Nested A</option>
+                            <option value="nested">Nested B</option>
+                        </optgroup>
+
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <label for="textarea">Textarea:</label>
+                    <textarea name="textarea" id="textarea"></textarea>
+                </fieldset>
+
+                <input type="submit" value="ok">
+                <input type="button" value="disabled" disabled>
+                <input type="button" class="subtle" value="subtle">
+                <input type="button" class="subtle" value="disabled" disabled>
+                <button class="warning">Warning</button>
+                <button class="warning" disabled>Warning</button>
+                <button class="danger">Warning</button>
+                <button class="danger" disabled>Warning</button>
+            </form>
+
+            <h2 id="expander">Expander</h2>
+            <details title="expander">
+                <summary>Expander</summary>
+                <div class="block md">
+                    <p>Some text</p>
+                </div>
+            </details>
+
+            <h2 id="table">Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column A</th>
+                        <th>Column B</th>
+                        <th>Column C</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Some Product or something</td>
+                        <td>Some Category</td>
+                        <td>$1 234.50</td>
+                    </tr>
+
+                    <tr>
+                        <td>Some Product or something</td>
+                        <td>Some Category</td>
+                        <td>$1 234.50</td>
+                    </tr>
+
+                    <tr>
+                        <td>Some Product or something</td>
+                        <td>Some Category</td>
+                        <td>$1 111.11</td>
+                    </tr>
+
+                    <tr>
+                        <td>Some Product or something</td>
+                        <td>Some Category</td>
+                        <td>$8 888.88</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="tabs">Tabs</h2>
+            <ui-tabs>
+                <ui-tab-panel id="test-1" title="Tab 1">
+                    <section slot="content" class="block md">
+                        <h3>Section 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra
+                            ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam
+                                luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo
+                            sit
+                            amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
+                    </section>
+                </ui-tab-panel>
+                <ui-tab-panel id="test-2" title="Tab 2">
+                    <section slot="content" class="block md">
+                        <h3>Section 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra
+                            ultricies,
+                            ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim
+                            in
+                            interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent
+                            non
+                            odio bibendum magna bibendum accumsan.</p>
+                    </section>
+                </ui-tab-panel>
+            </ui-tabs>
+
+            <h2 id="listbox">Listbox</h2>
+            <ul class="listbox">
+                <li><a href="#">Item #1</a></li>
+                <li><a href="#">Item #2</a></li>
+                <li><a href="#">Item #3</a></li>
+                <li><a href="#">Item #4</a></li>
+            </ul>
+
+            <h2 id="notification">Notification</h2>
+
+            <pre>
             <code class="language-javascript">
 import { NotificationBuilder } from './components/ui-notification.ts';
 const n = new NotificationBuilder("Hello from notifications")
@@ -258,16 +279,17 @@ document.getElementById('noti').onclick = () => n.send();
             </code>
         </pre>
 
-        <button id="noti">Send</button>
-        <script type="module">
-            import { NotificationBuilder } from './components/ui-notification.ts';
-            const n = new NotificationBuilder("Hello from notifications")
-                .withBody("What's up")
-                .withIcon("error");
+            <button id="noti">Send</button>
+            <script type="module">
+                import { NotificationBuilder } from './components/ui-notification.ts';
+                const n = new NotificationBuilder("Hello from notifications")
+                    .withBody("What's up")
+                    .withIcon("error");
 
-            document.getElementById('noti').onclick = () => n.send();
-        </script>
-    </main>
+                document.getElementById('noti').onclick = () => n.send();
+            </script>
+        </main>
+    </layout>
 </body>
 
 </html>
