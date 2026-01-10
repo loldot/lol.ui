@@ -4,27 +4,48 @@
     --space-md: 1em;
     --space-lg: 2em;
 
-    --bg-main: rgb(15, 23, 42);
-    --bg-dark: #334155;
-    --bg-slate-dark: hsl(217, 33%, 17%);
-    --bg-slate-highlight: hsl(215, 19%, 35%);
+    /* Lightness Variables (Dark Mode Defaults) */
+    --l-bg-main: 20.8%;
+    --l-bg-dark: 37.2%;
+    --l-bg-slate-dark: 27.5%;
+    --l-bg-slate-highlight: 45%;
 
-    --text: #f0f0f0;
+    --l-text: 95.5%;
 
-    --accent: hsl(83.7, 80.5%, 60.5%);
-    --accent-light: hsl(83.7, 80.5%, 60.5%);
-    --accent-lightest: hsl(83.7, 80.5%, 80.1%);
-    --accent-dark: hsl(83.7, 80.5%, 40.5%);
+    --l-accent: 86.8%;
+    --l-accent-lightest: 92.8%;
+    --l-accent-dark: 71.8%;
+
+    --l-warning: 83.7%;
+    --l-warning-light: 87.8%;
+    --l-warning-lighter: 95.5%;
+
+    --l-danger: 52.5%;
+    --l-danger-light: 63.3%;
+    --l-danger-lighter: 80.2%;
+
+    /* Color Definitions using Lightness Variables */
+    --bg-main: oklch(var(--l-bg-main) 0.04 265.8);
+    --bg-dark: oklch(var(--l-bg-dark) 0.039 257.3);
+    --bg-slate-dark: oklch(var(--l-bg-slate-dark) 0.036 259.7);
+    --bg-slate-highlight: oklch(var(--l-bg-slate-highlight) 0.037 256.8);
+
+    --text: oklch(var(--l-text) 0 0);
+
+    --accent: oklch(var(--l-accent) 0.198 128.7);
+    --accent-light: oklch(var(--l-accent) 0.198 128.7);
+    --accent-lightest: oklch(var(--l-accent-lightest) 0.111 126);
+    --accent-dark: oklch(var(--l-accent-dark) 0.191 130.8);
 
     accent-color: var(--accent);
 
-    --warning: hsla(52, 77%, 53%, 1);
-    --warning-light: hsla(52, 77%, 66%, 1);
-    --warning-lighter: hsla(52, 77%, 88%, 1);
+    --warning: oklch(var(--l-warning) 0.164 99.7);
+    --warning-light: oklch(var(--l-warning-light) 0.137 100.7);
+    --warning-lighter: oklch(var(--l-warning-lighter) 0.053 100.1);
 
-    --danger: hsl(353, 72%, 44%);
-    --danger-light: hsl(353, 72%, 60%);
-    --danger-lighter: hsl(353, 72%, 80%);
+    --danger: oklch(var(--l-danger) 0.194 22.1);
+    --danger-light: oklch(var(--l-danger-light) 0.182 17.3);
+    --danger-lighter: oklch(var(--l-danger-lighter) 0.087 11.5);
 
     --text-size-0: 14pt;
     --text-size-1: 17pt;
@@ -33,6 +54,29 @@
     --text-size-4: 31pt;
     --text-size-5: 37pt;
     --text-size-6: 45pt;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --l-bg-main: 98%;
+        --l-bg-dark: 95%;
+        --l-bg-slate-dark: 92%;
+        --l-bg-slate-highlight: 82%;
+
+        --l-text: 10%;
+
+        --l-accent: 80%;
+        --l-accent-lightest: 85.8%;
+        --l-accent-dark: 65%;
+
+        --l-warning: 60%;
+        --l-warning-light: 70%;
+        --l-warning-lighter: 80%;
+
+        --l-danger: 80%;
+        --l-danger-light: 85%;
+        --l-danger-lighter: 95%;
+    }
 }
 
 * {
@@ -359,6 +403,7 @@ nav ul li a:hover {
     background-color: var(--bg-slate-dark);
     text-decoration: none;
     border-color: var(--bg-slate-highlight);
+    color: var(--accent)
 }
 
 grid {
